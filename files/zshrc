@@ -114,8 +114,6 @@ export NVM_DIR="$HOME/.nvm"
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 export ANDROID_SDK_ROOT=/home/juanjo/Android/Sdk
 export ANDROID_HOME=/home/juanjo/Android/Sdk
-export DO=f2a237751d4f852e723373a5e0d21eeeba8f08d566be037e51cb7dae9f92d81a
-export JUANJO_DO=d5649c5dd938560a0904a913a98f592f1e2057e15b1a8f662009c41e3cc6484f
 export CAPACITOR_ANDROID_STUDIO_PATH=/opt/android-studio/bin/studio.sh
 
 
