@@ -34,3 +34,9 @@
       key: "/org/gnome/desktop/background/picture-options"
       value: "'zoom'"
 
+  - name: copy .zshrc file
+    copy:
+      src: files/zshrc
+      dest: /home/juanjo/.zshrc
+      owner: juanjo
+      group: juanjo
