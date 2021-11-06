@@ -5,11 +5,15 @@
 
   tasks:
   - name: install packages
+    become: true
+    become_method: sudo
     package:
       name:
         - htop
         - tmux
         - vim
+        - neovim
+        - neofetch
 
   - name: copy wallpaper file
     copy:
@@ -29,3 +33,4 @@
     dconf:
       key: "/org/gnome/desktop/background/picture-options"
       value: "'zoom'"
+
