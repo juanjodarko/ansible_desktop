@@ -1,2 +1,2 @@
-# ansible_desktop
-Personal  ansible repo
+# Personal configuration
+Ansible configuration for desktops and laptops
