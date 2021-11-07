@@ -28,7 +28,7 @@
 
   - name: create NeoVIM folder
     file:
-      path: /home/juanjo/.config/nvim"
+      path: /home/juanjo/.config/nvim/"
       state: directory
       owner: juanjo
       group: juanjo
