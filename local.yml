@@ -71,7 +71,7 @@
 
   - name: install ohmyzsh
     shell:
-      chdir: /home/juanjo/git/ohmyzsh/tools"
+      chdir: /home/juanjo/git/ohmyzsh/tools
       executable: /home/juanjo/git/ohmyzsh/tools/install.sh
       cmd: install.sh
 
