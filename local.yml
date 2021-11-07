@@ -25,7 +25,6 @@
         - libfreetype6-dev
         - libfontconfig1-dev
         - libxcb-xfixes0-dev
-        - powerline-fonts
         - fzf
 
   - name: create NeoVIM folder
