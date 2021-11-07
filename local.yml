@@ -27,6 +27,8 @@
         - fzf
 
   - name: create NeoVIM folder
+    become: true
+    become_user: juanjo
     file:
       path: "{{ home }}/.config/nvim"
       state: directory
@@ -35,6 +37,8 @@
       mode: 0775
 
   - name: copy Alias file
+    become: true
+    become_user: juanjo
     copy:
       src: files/alias
       dest: "{{ home }}/.alias"
@@ -42,6 +46,8 @@
       group: "{{ user }}"
 
   - name: copy PowerLevel10k
+    become: true
+    become_user: juanjo
     copy:
       src: files/p10k
       dest: "{{ home }}/.p10k.zsh"
@@ -49,6 +55,8 @@
       group: "{{ user }}"
 
   - name: copy VIM config
+    become: true
+    become_user: juanjo
     copy:
       src: files/vimrc
       dest: "{{ home }}/.vimrc"
@@ -56,6 +64,8 @@
       group: "{{ user }}"
 
   - name: copy NeoVIM config
+    become: true
+    become_user: juanjo
     copy:
       src: files/neovim
       dest: "{{ home }}/.config/nvim/init.vim"
@@ -63,6 +73,8 @@
       group: "{{ user }}"
 
   - name: clone ohmyzsh
+    become: true
+    become_user: juanjo
     git:
       clone: yes
       repo: https://github.com/ohmyzsh/ohmyzsh.git
@@ -70,12 +82,16 @@
       update: yes
 
   - name: install ohmyzsh
+    become: true
+    become_user: juanjo
     shell:
       chdir: "{{ home }}/git/ohmyzsh/tools"
       executable: "{{ home }}/git/ohmyzsh/tools/install.sh"
       cmd: install.sh
 
   - name: clone powerlevel10k
+    become: true
+    become_user: juanjo
     git:
       clone: yes
       repo: https://github.com/romkatv/powerlevel10k.git
@@ -83,6 +99,8 @@
       update: yes
 
   - name: copy .zshrc file
+    become: true
+    become_user: juanjo
     copy:
       src: files/zshrc
       dest: "{{ home }}/.zshrc"
@@ -90,6 +108,8 @@
       group: "{{ user }}"
 
   - name: copy tmux config
+    become: true
+    become_user: juanjo
     copy:
       src: files/tmux
       dest: "{{ home }}/.tmux.conf"
@@ -98,6 +118,8 @@
 
 
   - name: copy wallpaper file
+    become: true
+    become_user: root
     copy:
       src: files/ansible_wallpaper.jpg
       dest: /usr/share/backgrounds/ansible_wallpaper.jpg
@@ -105,23 +127,29 @@
       group: root
 
   - name: set wallpaper
+    become: true
     become_user: juanjo
     dconf:
       key: "/org/gnome/desktop/backgrounds/picture-uri"
       value: "'file:///usr/share/backgrounds/ansible_wallpaper.jpg'"
 
   - name: set wallpaper position
+    become: true
     become_user: juanjo
     dconf:
       key: "/org/gnome/desktop/background/picture-options"
       value: "'zoom'"
 
   - name: add ansible user
+    become: true
+    become_user: root
     user:
       name: ansible
       system: yes
 
   - name: set up sudo for ansible user
+    become: true
+    become_user: root
     copy:
       src: files/sudoers_ansible
       dest: /etc/sudoers.d/ansible
@@ -130,6 +158,8 @@
       mode: 0440
 
   - name: add ansible-pull cron job
+    become: true
+    become_user: root
     cron:
       name: ansible auto-provision
       user: ansible
