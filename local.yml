@@ -19,7 +19,6 @@
         - neovim
         - neofetch
         - zsh
-        - cronopete
         - curl
         - cmake
         - pkg-config
