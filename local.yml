@@ -28,7 +28,7 @@
 
   - name: create NeoVIM folder
     file:
-      path: /home/juanjo/.config/nvim/"
+      path: /home/juanjo/.config/nvim/
       state: directory
       owner: juanjo
       group: juanjo
@@ -37,14 +37,14 @@
   - name: copy Alias file
     copy:
       src: files/alias
-      dest: /home/juanjo/.alias"
+      dest: /home/juanjo/.alias
       owner: juanjo
       group: juanjo
 
   - name: copy PowerLevel10k
     copy:
       src: files/p10k
-      dest: /home/juanjo/.p10k.zsh"
+      dest: /home/juanjo/.p10k.zsh
       owner: juanjo
       group: juanjo
 
@@ -58,7 +58,7 @@
   - name: copy NeoVIM config
     copy:
       src: files/neovim
-      dest: /home/juanjo/.config/nvim/init.vim"
+      dest: /home/juanjo/.config/nvim/init.vim
       owner: juanjo
       group: juanjo
 
@@ -66,33 +66,33 @@
     git:
       clone: yes
       repo: https://github.com/ohmyzsh/ohmyzsh.git
-      dest: /home/juanjo/git/ohmyzsh"
+      dest: /home/juanjo/git/ohmyzsh
       update: yes
 
   - name: install ohmyzsh
     shell:
       chdir: /home/juanjo/git/ohmyzsh/tools"
-      executable: /home/juanjo/git/ohmyzsh/tools/install.sh"
+      executable: /home/juanjo/git/ohmyzsh/tools/install.sh
       cmd: install.sh
 
   - name: clone powerlevel10k
     git:
       clone: yes
       repo: https://github.com/romkatv/powerlevel10k.git
-      dest: /home/juanjo/.oh-my-zsh/custom/themes/powerlevel10k"
+      dest: /home/juanjo/.oh-my-zsh/custom/themes/powerlevel10k
       update: yes
 
   - name: copy .zshrc file
     copy:
       src: files/zshrc
-      dest: /home/juanjo/.zshrc"
+      dest: /home/juanjo/.zshrc
       owner: juanjo
       group: juanjo
 
   - name: copy tmux config
     copy:
       src: files/tmux
-      dest: /home/juanjo/.tmux.conf"
+      dest: /home/juanjo/.tmux.conf
       owner: juanjo
       group: juanjo
 
